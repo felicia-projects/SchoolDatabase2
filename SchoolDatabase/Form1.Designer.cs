@@ -34,14 +34,19 @@
             classbutton = new Button();
             teacherButton = new Button();
             studentButton = new Button();
-            panelStudent = new Panel();
-            updateButton = new Button();
-            deleteButton = new Button();
-            addButton = new Button();
             dataGridView1 = new DataGridView();
+            panelStudentControls = new Panel();
+            Deletebtn = new Button();
+            SSbtn = new Button();
+            SSTextbox = new TextBox();
+            Updatebtn = new Button();
+            SSLabel = new Label();
+            Addbtn = new Button();
+            panelStudent = new Panel();
             panel1.SuspendLayout();
-            panelStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panelStudentControls.SuspendLayout();
+            panelStudent.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -54,119 +59,172 @@
             panel1.Controls.Add(studentButton);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(300, 450);
+            panel1.Size = new Size(188, 361);
             panel1.TabIndex = 0;
             // 
             // reportsButton
             // 
-            reportsButton.Location = new Point(40, 312);
+            reportsButton.Location = new Point(32, 250);
+            reportsButton.Margin = new Padding(2);
             reportsButton.Name = "reportsButton";
-            reportsButton.Size = new Size(112, 34);
+            reportsButton.Size = new Size(90, 27);
             reportsButton.TabIndex = 4;
             reportsButton.Text = "Reports";
             reportsButton.UseVisualStyleBackColor = true;
+            reportsButton.Click += reportsButton_Click;
             // 
             // courseButton
             // 
-            courseButton.Location = new Point(41, 252);
+            courseButton.Location = new Point(33, 202);
+            courseButton.Margin = new Padding(2);
             courseButton.Name = "courseButton";
-            courseButton.Size = new Size(112, 34);
+            courseButton.Size = new Size(90, 27);
             courseButton.TabIndex = 3;
             courseButton.Text = "Course";
             courseButton.UseVisualStyleBackColor = true;
+            courseButton.Click += courseButton_Click;
             // 
             // classbutton
             // 
-            classbutton.Location = new Point(40, 189);
+            classbutton.Location = new Point(32, 151);
+            classbutton.Margin = new Padding(2);
             classbutton.Name = "classbutton";
-            classbutton.Size = new Size(112, 34);
+            classbutton.Size = new Size(90, 27);
             classbutton.TabIndex = 2;
             classbutton.Text = "Classes";
             classbutton.UseVisualStyleBackColor = true;
+            classbutton.Click += classbutton_Click;
             // 
             // teacherButton
             // 
-            teacherButton.Location = new Point(40, 126);
+            teacherButton.Location = new Point(32, 101);
+            teacherButton.Margin = new Padding(2);
             teacherButton.Name = "teacherButton";
-            teacherButton.Size = new Size(112, 34);
+            teacherButton.Size = new Size(90, 27);
             teacherButton.TabIndex = 1;
             teacherButton.Text = "Teacher";
             teacherButton.UseVisualStyleBackColor = true;
+            teacherButton.Click += teacherButton_Click;
             // 
             // studentButton
             // 
-            studentButton.Location = new Point(41, 57);
+            studentButton.Location = new Point(33, 46);
+            studentButton.Margin = new Padding(2);
             studentButton.Name = "studentButton";
-            studentButton.Size = new Size(112, 34);
+            studentButton.Size = new Size(90, 27);
             studentButton.TabIndex = 0;
             studentButton.Text = "Student";
             studentButton.UseVisualStyleBackColor = true;
-            // 
-            // panelStudent
-            // 
-            panelStudent.Controls.Add(updateButton);
-            panelStudent.Controls.Add(deleteButton);
-            panelStudent.Controls.Add(addButton);
-            panelStudent.Controls.Add(dataGridView1);
-            panelStudent.Dock = DockStyle.Fill;
-            panelStudent.Location = new Point(300, 0);
-            panelStudent.Name = "panelStudent";
-            panelStudent.Size = new Size(367, 450);
-            panelStudent.TabIndex = 1;
-            // 
-            // updateButton
-            // 
-            updateButton.Location = new Point(201, 252);
-            updateButton.Name = "updateButton";
-            updateButton.Size = new Size(112, 34);
-            updateButton.TabIndex = 3;
-            updateButton.Text = "Update";
-            updateButton.UseVisualStyleBackColor = true;
-            updateButton.Click += updateButton_Click;
-            // 
-            // deleteButton
-            // 
-            deleteButton.Location = new Point(117, 312);
-            deleteButton.Name = "deleteButton";
-            deleteButton.Size = new Size(112, 34);
-            deleteButton.TabIndex = 2;
-            deleteButton.Text = "Delete";
-            deleteButton.UseVisualStyleBackColor = true;
-            deleteButton.Click += deleteButton_Click;
-            // 
-            // addButton
-            // 
-            addButton.Location = new Point(31, 252);
-            addButton.Name = "addButton";
-            addButton.Size = new Size(112, 34);
-            addButton.TabIndex = 1;
-            addButton.Text = "Add";
-            addButton.UseVisualStyleBackColor = true;
-            addButton.Click += addButton_Click;
+            studentButton.Click += studentButton_Click;
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = SystemColors.ActiveCaption;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(4, 3);
+            dataGridView1.Location = new Point(5, 2);
+            dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(360, 225);
+            dataGridView1.Size = new Size(339, 180);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
+            // 
+            // panelStudentControls
+            // 
+            panelStudentControls.BackColor = SystemColors.ControlDark;
+            panelStudentControls.Controls.Add(Deletebtn);
+            panelStudentControls.Controls.Add(SSbtn);
+            panelStudentControls.Controls.Add(SSTextbox);
+            panelStudentControls.Controls.Add(Updatebtn);
+            panelStudentControls.Controls.Add(SSLabel);
+            panelStudentControls.Controls.Add(Addbtn);
+            panelStudentControls.Location = new Point(5, 187);
+            panelStudentControls.Name = "panelStudentControls";
+            panelStudentControls.Size = new Size(339, 171);
+            panelStudentControls.TabIndex = 6;
+            // 
+            // Deletebtn
+            // 
+            Deletebtn.Location = new Point(214, 120);
+            Deletebtn.Name = "Deletebtn";
+            Deletebtn.Size = new Size(94, 29);
+            Deletebtn.TabIndex = 5;
+            Deletebtn.Text = "Delete";
+            Deletebtn.UseVisualStyleBackColor = true;
+            // 
+            // SSbtn
+            // 
+            SSbtn.Location = new Point(214, 48);
+            SSbtn.Name = "SSbtn";
+            SSbtn.Size = new Size(94, 29);
+            SSbtn.TabIndex = 2;
+            SSbtn.Text = "Search";
+            SSbtn.UseVisualStyleBackColor = true;
+            // 
+            // SSTextbox
+            // 
+            SSTextbox.Location = new Point(14, 49);
+            SSTextbox.Name = "SSTextbox";
+            SSTextbox.Size = new Size(194, 27);
+            SSTextbox.TabIndex = 1;
+            // 
+            // Updatebtn
+            // 
+            Updatebtn.Location = new Point(114, 120);
+            Updatebtn.Name = "Updatebtn";
+            Updatebtn.Size = new Size(94, 29);
+            Updatebtn.TabIndex = 4;
+            Updatebtn.Text = "Update";
+            Updatebtn.UseVisualStyleBackColor = true;
+            // 
+            // SSLabel
+            // 
+            SSLabel.AutoSize = true;
+            SSLabel.Location = new Point(14, 26);
+            SSLabel.Name = "SSLabel";
+            SSLabel.Size = new Size(108, 20);
+            SSLabel.TabIndex = 0;
+            SSLabel.Text = "Student Search";
+            // 
+            // Addbtn
+            // 
+            Addbtn.Location = new Point(14, 120);
+            Addbtn.Name = "Addbtn";
+            Addbtn.Size = new Size(94, 29);
+            Addbtn.TabIndex = 3;
+            Addbtn.Text = "Add";
+            Addbtn.UseVisualStyleBackColor = true;
+            Addbtn.Click += Addbtn_Click;
+            // 
+            // panelStudent
+            // 
+            panelStudent.Controls.Add(panelStudentControls);
+            panelStudent.Controls.Add(dataGridView1);
+            panelStudent.Dock = DockStyle.Fill;
+            panelStudent.Location = new Point(188, 0);
+            panelStudent.Margin = new Padding(2);
+            panelStudent.Name = "panelStudent";
+            panelStudent.Size = new Size(347, 361);
+            panelStudent.TabIndex = 1;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(667, 450);
+            ClientSize = new Size(535, 361);
             Controls.Add(panelStudent);
             Controls.Add(panel1);
+            Margin = new Padding(2);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Student Database";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
-            panelStudent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panelStudentControls.ResumeLayout(false);
+            panelStudentControls.PerformLayout();
+            panelStudent.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -178,10 +236,20 @@
         private Button classbutton;
         private Button teacherButton;
         private Button studentButton;
-        private Panel panelStudent;
+        private Label studentLabel;
+        private Button btnFilterStudent;
+        private TextBox txtStudentFilter;
+        private Button btnDelete;
+        private Button btnUpdate;
+        private Button btnAdd;
         private DataGridView dataGridView1;
-        private Button updateButton;
-        private Button deleteButton;
-        private Button addButton;
+        private Panel panelStudentControls;
+        private Button Deletebtn;
+        private Button SSbtn;
+        private TextBox SSTextbox;
+        private Button Updatebtn;
+        private Label SSLabel;
+        private Button Addbtn;
+        private Panel panelStudent;
     }
 }
