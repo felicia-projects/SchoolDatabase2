@@ -84,7 +84,7 @@ namespace SchoolDatabase
             SSTextbox.Visible = false;
             SSbtn.Visible = false;
             SSLabel.Visible = false;
-            LoadDataIntoGrid("SELECT * FROM Class");
+            LoadDataIntoGrid("SELECT * FROM Class_Section");
         }
 
         private void courseButton_Click(object sender, EventArgs e)
