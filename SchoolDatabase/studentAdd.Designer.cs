@@ -219,6 +219,7 @@
             Controls.Add(SIDLabel);
             Name = "studentAdd";
             Text = "Add Student";
+            Load += studentAdd_Load;
             ResumeLayout(false);
             PerformLayout();
         }

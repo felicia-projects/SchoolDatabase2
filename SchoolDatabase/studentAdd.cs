@@ -25,6 +25,7 @@ namespace SchoolDatabase
                 try
                 {
                     SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@StudentID", SIDTextbox.Text);
                     cmd.Parameters.AddWithValue("@FirstName", FNTextbox.Text);
                     cmd.Parameters.AddWithValue("@LastName", LNTextbox.Text);
                     cmd.Parameters.AddWithValue("@DateOfBirth", DOBTextbox.Text);
@@ -44,6 +45,11 @@ namespace SchoolDatabase
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+        }
+
+        private void studentAdd_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

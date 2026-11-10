@@ -63,45 +63,35 @@ namespace SchoolDatabase
         private void studentButton_Click(object sender, EventArgs e)
         {
             activeTable = "Student"; // Set active table to Student
-            SSTextbox.Visible = true;
-            SSbtn.Visible = true;
-            SSLabel.Visible = true;
+            SSLabel.Text = "Student Search";
             LoadDataIntoGrid("SELECT StudentID, FirstName, LastName, DateOfBirth, Email, PhoneNumber, GradeLevel, EnrollmentDate FROM Student");
         }
 
         private void teacherButton_Click(object sender, EventArgs e)
         {
             activeTable = "Teacher"; // Set active table to Teacher
-            SSTextbox.Visible = false;
-            SSbtn.Visible = false;
-            SSLabel.Visible = false;
+            SSLabel.Text = "Teacher Search";
             LoadDataIntoGrid("SELECT * FROM Teacher");
         }
 
         private void classbutton_Click(object sender, EventArgs e)
         {
             activeTable = "Class"; // Set active table to Class
-            SSTextbox.Visible = false;
-            SSbtn.Visible = false;
-            SSLabel.Visible = false;
+            SSLabel.Text = "Class Search";
             LoadDataIntoGrid("SELECT * FROM Class_Section");
         }
 
         private void courseButton_Click(object sender, EventArgs e)
         {
             activeTable = "Course"; // Set active table to Course
-            SSTextbox.Visible = false;
-            SSbtn.Visible = false;
-            SSLabel.Visible = false;
+            SSLabel.Text = "Course Search";
             LoadDataIntoGrid("SELECT * FROM Course");
         }
 
         private void reportsButton_Click(object sender, EventArgs e)
         {
             activeTable = "Report"; // Set active table to Report
-            SSTextbox.Visible = false;
-            SSbtn.Visible = false;
-            SSLabel.Visible = false;
+            SSLabel.Text = "Report Search";
             LoadDataIntoGrid("SELECT * FROM Report");
         }
 
@@ -194,14 +184,39 @@ namespace SchoolDatabase
         private void SSbtn_Click(object sender, EventArgs e)
         {
             string searchValue = SSTextbox.Text.Trim();
-            string query = "SELECT StudentID, FirstName, LastName, DateOfBirth, Email, PhoneNumber, GradeLevel, EnrollmentDate FROM Student WHERE FirstName LIKE @search OR LastName LIKE @search";
+            string query = "";
 
             using (SqlConnection conn = DatabaseConnection.GetConnection())
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@search", "%" + searchValue + "%");
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+
+                    switch (activeTable)
+                    {
+                        case "Student":
+                            query = "SELECT StudentID, FirstName, LastName, DateOfBirth, Email, PhoneNumber, GradeLevel, EnrollmentDate FROM Student WHERE FirstName LIKE @SearchValue OR LastName LIKE @SearchValue";
+                            cmd.Parameters.AddWithValue("@SearchValue", "%" + searchValue + "%");
+                            break;
+                        case "Teacher":
+                            query = "SELECT * FROM Teacher WHERE FirstName LIKE @SearchValue OR LastName LIKE @SearchValue";
+                            cmd.Parameters.AddWithValue("@SearchValue", "%" + searchValue + "%");
+                            break;
+                        case "Class":
+                            query = "SELECT * FROM Class_Section WHERE ClassName LIKE @SearchValue";
+                            cmd.Parameters.AddWithValue("@SearchValue", "%" + searchValue + "%");
+                            break;
+                        case "Course":
+                            query = "SELECT * FROM Course WHERE CourseName LIKE @SearchValue";
+                            cmd.Parameters.AddWithValue("@SearchValue", "%" + searchValue + "%");
+                            break;
+                        case "Report":
+                            query = "SELECT * FROM Report WHERE ReportTitle LIKE @SearchValue";
+                            cmd.Parameters.AddWithValue("@SearchValue", "%" + searchValue + "%");
+                            break;
+                    }
+                    cmd.CommandText = query;
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
