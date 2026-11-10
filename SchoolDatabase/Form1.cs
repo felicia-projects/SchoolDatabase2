@@ -72,7 +72,7 @@ namespace SchoolDatabase
         {
             activeTable = "Teacher"; // Set active table to Teacher
             SSLabel.Text = "Teacher Search";
-            LoadDataIntoGrid("SELECT TeacherID, FirstName, LastName, Email, PhoneNumber, DepartmentKey FROM Teacher");
+            LoadDataIntoGrid("SELECT TeacherID, FirstName, LastName, Email, PhoneNumber, DepartmentID FROM Teacher");
         }
 
         private void classbutton_Click(object sender, EventArgs e)
@@ -117,7 +117,7 @@ namespace SchoolDatabase
                     teacherAdd teacherAdd = new teacherAdd();
                     teacherAdd.ShowDialog();
 
-                    LoadDataIntoGrid("SELECT TeacherID, FirstName, LastName, Email, PhoneNumber, DepartmentKey FROM Teacher");
+                    LoadDataIntoGrid("SELECT TeacherID, FirstName, LastName, Email, PhoneNumber, DepartmentID FROM Teacher");
                     break;
                 case "Class":
                     MessageBox.Show("Will add later");
