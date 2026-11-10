@@ -186,7 +186,7 @@
             // 
             // studentSavebtn
             // 
-            studentSavebtn.Location = new Point(165, 251);
+            studentSavebtn.Location = new Point(169, 251);
             studentSavebtn.Name = "studentSavebtn";
             studentSavebtn.Size = new Size(94, 29);
             studentSavebtn.TabIndex = 17;

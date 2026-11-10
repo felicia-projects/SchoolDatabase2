@@ -1,6 +1,7 @@
 using Microsoft.Data.SqlClient;
 using Microsoft.VisualBasic.Devices;
 using System.Data;
+using System.Net.Http.Headers;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.LinkLabel;
 
@@ -71,7 +72,7 @@ namespace SchoolDatabase
         {
             activeTable = "Teacher"; // Set active table to Teacher
             SSLabel.Text = "Teacher Search";
-            LoadDataIntoGrid("SELECT * FROM Teacher");
+            LoadDataIntoGrid("SELECT TeacherID, FirstName, LastName, Email, PhoneNumber, DepartmentKey FROM Teacher");
         }
 
         private void classbutton_Click(object sender, EventArgs e)
@@ -113,7 +114,10 @@ namespace SchoolDatabase
                     LoadDataIntoGrid("SELECT StudentID, FirstName, LastName, DateOfBirth, Email, PhoneNumber, GradeLevel, EnrollmentDate FROM Student");
                     break;
                 case "Teacher":
-                    MessageBox.Show("Will add later");
+                    teacherAdd teacherAdd = new teacherAdd();
+                    teacherAdd.ShowDialog();
+
+                    LoadDataIntoGrid("SELECT TeacherID, FirstName, LastName, Email, PhoneNumber, DepartmentKey FROM Teacher");
                     break;
                 case "Class":
                     MessageBox.Show("Will add later");
