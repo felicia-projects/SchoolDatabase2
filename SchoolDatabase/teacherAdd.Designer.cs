@@ -39,111 +39,124 @@
             TLNLabel = new Label();
             TEmLabel = new Label();
             TPNLabel = new Label();
-            TDKLabel = new Label();
+            TDIDLabel = new Label();
             teacherSavebtn = new Button();
             SuspendLayout();
             // 
             // TIDTextbox
             // 
-            TIDTextbox.Location = new Point(12, 33);
+            TIDTextbox.Location = new Point(15, 41);
+            TIDTextbox.Margin = new Padding(4, 4, 4, 4);
             TIDTextbox.Name = "TIDTextbox";
-            TIDTextbox.Size = new Size(154, 27);
+            TIDTextbox.Size = new Size(192, 31);
             TIDTextbox.TabIndex = 0;
             // 
             // DKTextbox
             // 
-            DKTextbox.Location = new Point(226, 166);
+            DKTextbox.Location = new Point(282, 208);
+            DKTextbox.Margin = new Padding(4, 4, 4, 4);
             DKTextbox.Name = "DKTextbox";
-            DKTextbox.Size = new Size(154, 27);
+            DKTextbox.Size = new Size(192, 31);
             DKTextbox.TabIndex = 2;
             // 
             // TPNTextbox
             // 
-            TPNTextbox.Location = new Point(226, 99);
+            TPNTextbox.Location = new Point(282, 124);
+            TPNTextbox.Margin = new Padding(4, 4, 4, 4);
             TPNTextbox.Name = "TPNTextbox";
-            TPNTextbox.Size = new Size(154, 27);
+            TPNTextbox.Size = new Size(192, 31);
             TPNTextbox.TabIndex = 3;
             // 
             // TEmTextbox
             // 
-            TEmTextbox.Location = new Point(226, 33);
+            TEmTextbox.Location = new Point(282, 41);
+            TEmTextbox.Margin = new Padding(4, 4, 4, 4);
             TEmTextbox.Name = "TEmTextbox";
-            TEmTextbox.Size = new Size(154, 27);
+            TEmTextbox.Size = new Size(192, 31);
             TEmTextbox.TabIndex = 4;
             // 
             // LNTextbox
             // 
-            LNTextbox.Location = new Point(12, 166);
+            LNTextbox.Location = new Point(15, 208);
+            LNTextbox.Margin = new Padding(4, 4, 4, 4);
             LNTextbox.Name = "LNTextbox";
-            LNTextbox.Size = new Size(154, 27);
+            LNTextbox.Size = new Size(192, 31);
             LNTextbox.TabIndex = 5;
             // 
             // FNTextbox
             // 
-            FNTextbox.Location = new Point(12, 99);
+            FNTextbox.Location = new Point(15, 124);
+            FNTextbox.Margin = new Padding(4, 4, 4, 4);
             FNTextbox.Name = "FNTextbox";
-            FNTextbox.Size = new Size(154, 27);
+            FNTextbox.Size = new Size(192, 31);
             FNTextbox.TabIndex = 6;
             // 
             // TIDLabel
             // 
             TIDLabel.AutoSize = true;
-            TIDLabel.Location = new Point(12, 10);
+            TIDLabel.Location = new Point(15, 12);
+            TIDLabel.Margin = new Padding(4, 0, 4, 0);
             TIDLabel.Name = "TIDLabel";
-            TIDLabel.Size = new Size(75, 20);
+            TIDLabel.Size = new Size(88, 25);
             TIDLabel.TabIndex = 7;
             TIDLabel.Text = "TeacherID";
             // 
             // TFNLabel
             // 
             TFNLabel.AutoSize = true;
-            TFNLabel.Location = new Point(12, 76);
+            TFNLabel.Location = new Point(15, 95);
+            TFNLabel.Margin = new Padding(4, 0, 4, 0);
             TFNLabel.Name = "TFNLabel";
-            TFNLabel.Size = new Size(80, 20);
+            TFNLabel.Size = new Size(97, 25);
             TFNLabel.TabIndex = 8;
             TFNLabel.Text = "First Name";
             // 
             // TLNLabel
             // 
             TLNLabel.AutoSize = true;
-            TLNLabel.Location = new Point(12, 143);
+            TLNLabel.Location = new Point(15, 179);
+            TLNLabel.Margin = new Padding(4, 0, 4, 0);
             TLNLabel.Name = "TLNLabel";
-            TLNLabel.Size = new Size(79, 20);
+            TLNLabel.Size = new Size(95, 25);
             TLNLabel.TabIndex = 9;
             TLNLabel.Text = "Last Name";
             // 
             // TEmLabel
             // 
             TEmLabel.AutoSize = true;
-            TEmLabel.Location = new Point(226, 10);
+            TEmLabel.Location = new Point(282, 12);
+            TEmLabel.Margin = new Padding(4, 0, 4, 0);
             TEmLabel.Name = "TEmLabel";
-            TEmLabel.Size = new Size(46, 20);
+            TEmLabel.Size = new Size(54, 25);
             TEmLabel.TabIndex = 10;
             TEmLabel.Text = "Email";
             // 
             // TPNLabel
             // 
             TPNLabel.AutoSize = true;
-            TPNLabel.Location = new Point(226, 76);
+            TPNLabel.Location = new Point(282, 95);
+            TPNLabel.Margin = new Padding(4, 0, 4, 0);
             TPNLabel.Name = "TPNLabel";
-            TPNLabel.Size = new Size(108, 20);
+            TPNLabel.Size = new Size(132, 25);
             TPNLabel.TabIndex = 11;
             TPNLabel.Text = "Phone Number";
             // 
-            // TDKLabel
+            // TDIDLabel
             // 
-            TDKLabel.AutoSize = true;
-            TDKLabel.Location = new Point(226, 143);
-            TDKLabel.Name = "TDKLabel";
-            TDKLabel.Size = new Size(117, 20);
-            TDKLabel.TabIndex = 12;
-            TDKLabel.Text = "Department Key";
+            TDIDLabel.AutoSize = true;
+            TDIDLabel.Location = new Point(282, 179);
+            TDIDLabel.Margin = new Padding(4, 0, 4, 0);
+            TDIDLabel.Name = "TDIDLabel";
+            TDIDLabel.Size = new Size(125, 25);
+            TDIDLabel.TabIndex = 12;
+            TDIDLabel.Text = "DepartmentID";
             // 
             // teacherSavebtn
             // 
-            teacherSavebtn.Location = new Point(148, 199);
+            teacherSavebtn.Location = new Point(185, 249);
+            teacherSavebtn.Margin = new Padding(4, 4, 4, 4);
             teacherSavebtn.Name = "teacherSavebtn";
-            teacherSavebtn.Size = new Size(94, 29);
+            teacherSavebtn.Size = new Size(118, 36);
             teacherSavebtn.TabIndex = 13;
             teacherSavebtn.Text = "Save";
             teacherSavebtn.UseVisualStyleBackColor = true;
@@ -151,11 +164,11 @@
             // 
             // teacherAdd
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(410, 254);
+            ClientSize = new Size(512, 318);
             Controls.Add(teacherSavebtn);
-            Controls.Add(TDKLabel);
+            Controls.Add(TDIDLabel);
             Controls.Add(TPNLabel);
             Controls.Add(TEmLabel);
             Controls.Add(TLNLabel);
@@ -167,6 +180,7 @@
             Controls.Add(TPNTextbox);
             Controls.Add(DKTextbox);
             Controls.Add(TIDTextbox);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "teacherAdd";
             Text = "teacherAdd";
             Load += teacherAdd_Load;
@@ -187,7 +201,7 @@
         private Label TLNLabel;
         private Label TEmLabel;
         private Label TPNLabel;
-        private Label TDKLabel;
+        private Label TDIDLabel;
         private Button teacherSavebtn;
     }
 }

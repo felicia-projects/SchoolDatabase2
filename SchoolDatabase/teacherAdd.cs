@@ -23,7 +23,7 @@ namespace SchoolDatabase
 
         private void teacherSavebtn_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO Teacher (TeacherID, FirstName, LastName, Email, PhoneNumber, DepartmentKey) VALUES (@TeacherID, @FirstName, @LastName, @Email, @PhoneNumber, @DepartmentKey)";
+            string query = "INSERT INTO Teacher (TeacherID, FirstName, LastName, Email, PhoneNumber, DepartmentID) VALUES (@TeacherID, @FirstName, @LastName, @Email, @PhoneNumber, @DepartmentID)";
 
             using (SqlConnection conn = Form1.DatabaseConnection.GetConnection())
             {
@@ -35,7 +35,7 @@ namespace SchoolDatabase
                     cmd.Parameters.AddWithValue("@LastName", TLNLabel.Text);
                     cmd.Parameters.AddWithValue("@Email", TEmTextbox.Text);
                     cmd.Parameters.AddWithValue("@PhoneNumber", TPNLabel.Text);
-                    cmd.Parameters.AddWithValue("@DepartmentKey", TDKLabel.Text);
+                    cmd.Parameters.AddWithValue("@DepartmentID", TDIDLabel.Text);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Teacher added successfully!");

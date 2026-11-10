@@ -89,11 +89,11 @@ namespace SchoolDatabase
             LoadDataIntoGrid("SELECT * FROM Course");
         }
 
-        private void reportsButton_Click(object sender, EventArgs e)
+        private void departmentButton_Click(object sender, EventArgs e)
         {
-            activeTable = "Report"; // Set active table to Report
-            SSLabel.Text = "Report Search";
-            LoadDataIntoGrid("SELECT * FROM Report");
+            activeTable = "Department"; // Set active table to Department
+            SSLabel.Text = "Department Search";
+            LoadDataIntoGrid("SELECT * FROM Department");
         }
 
         private void panelStudentControls_Paint(object sender, PaintEventArgs e)
