@@ -109,6 +109,7 @@
             Controls.Add(DIDLabel);
             Name = "DepartmentAdd";
             Text = "DepartmentAdd";
+            Load += DepartmentAdd_Load;
             ResumeLayout(false);
             PerformLayout();
         }

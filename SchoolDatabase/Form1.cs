@@ -123,7 +123,7 @@ namespace SchoolDatabase
                     classAdd classAdd = new classAdd();
                     classAdd.ShowDialog();
 
-                    LoadDataIntoGrid("SELECT SectionID, CourseID, TeacherID, RoomNumber, Semester, SchoolYear, Capacity FROM Class");
+                    LoadDataIntoGrid("SELECT SectionID, CourseID, TeacherID, RoomNumber, Semester, SchoolYear, Capacity FROM Class_Section");
                     break;
                 case "Course":
                     courseAdd courseAdd = new courseAdd();
@@ -138,7 +138,7 @@ namespace SchoolDatabase
                     LoadDataIntoGrid("SELECT DepartmentID, DepartmentName, DepartmentDescription FROM Department");
                     break;
             }
-            MessageBox.Show("Add functionality for " + activeTable + " Query ready!");
+
         }
 
         private void Updatebtn_Click(object sender, EventArgs e)
@@ -235,7 +235,7 @@ namespace SchoolDatabase
 
                         case "Class":
                             query = @"SELECT SectionID, CourseID, TeacherID, RoomNumber, Semester, SchoolYear, Capacity 
-                              FROM Class
+                              FROM Class_Section
                               WHERE CAST(SectionID AS VARCHAR) LIKE @SearchValue
                                  OR CAST(CourseID AS VARCHAR) LIKE @SearchValue
                                  OR CAST(TeacherID AS VARCHAR) LIKE @SearchValue

@@ -210,6 +210,7 @@
             Controls.Add(CSectionIDTextbox);
             Name = "classAdd";
             Text = "classAdd";
+            Load += classAdd_Load;
             ResumeLayout(false);
             PerformLayout();
         }

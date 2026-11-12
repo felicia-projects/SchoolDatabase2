@@ -23,18 +23,19 @@ namespace SchoolDatabase
 
         private void CourseSavebtn_Click(object sender, EventArgs e)
         {
-            String query = "INSERT INTO Course (CourseID, CourseName, CourseDescription, DepartmentID, Credits) VALUES (@CourseID, @CourseName, @CourseDescription, @DepartmentID, @Credits)";
+            string query = "INSERT INTO Course (CourseID, CourseName, CourseDescription, DepartmentID, Credits) " +
+                           "VALUES (@CourseID, @CourseName, @CourseDescription, @DepartmentID, @Credits)";
 
             using (SqlConnection conn = Form1.DatabaseConnection.GetConnection())
             {
                 try
                 {
                     SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@CourseID", CourseIDTextbox.Text);
-                    cmd.Parameters.AddWithValue("@CourseName", CourseNameTextbox.Text);
-                    cmd.Parameters.AddWithValue("@CourseDescription", CourseDescriptionTextbox.Text);
-                    cmd.Parameters.AddWithValue("@DepartmentID", CDepartmentIDTextbox.Text);
-                    cmd.Parameters.AddWithValue("@Credits", CourseCreditsTextbox.Text);
+                    cmd.Parameters.Add("@CourseID", SqlDbType.Int).Value = int.Parse(CourseIDTextbox.Text.Trim());
+                    cmd.Parameters.Add("@CourseName", SqlDbType.VarChar).Value = CourseNameTextbox.Text.Trim();
+                    cmd.Parameters.Add("@CourseDescription", SqlDbType.VarChar).Value = CourseDescriptionTextbox.Text.Trim();
+                    cmd.Parameters.Add("@DepartmentID", SqlDbType.Int).Value = int.Parse(CDepartmentIDTextbox.Text.Trim());
+                    cmd.Parameters.Add("@Credits", SqlDbType.Int).Value = int.Parse(CourseCreditsTextbox.Text.Trim());
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
@@ -46,6 +47,11 @@ namespace SchoolDatabase
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+        }
+
+        private void courseAdd_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

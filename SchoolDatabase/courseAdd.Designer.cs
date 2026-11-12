@@ -150,6 +150,7 @@
             Controls.Add(CourseIDLabel);
             Name = "courseAdd";
             Text = "courseAdd";
+            Load += courseAdd_Load;
             ResumeLayout(false);
             PerformLayout();
         }
