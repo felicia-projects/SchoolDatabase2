@@ -79,21 +79,21 @@ namespace SchoolDatabase
         {
             activeTable = "Class"; // Set active table to Class
             SSLabel.Text = "Class Search";
-            LoadDataIntoGrid("SELECT * FROM Class_Section");
+            LoadDataIntoGrid("SELECT SectionID, CourseID, TeacherID, PeriodID, RoomNumber, Semester, SchoolYear, Capacity FROM Class_Section");
         }
 
         private void courseButton_Click(object sender, EventArgs e)
         {
             activeTable = "Course"; // Set active table to Course
             SSLabel.Text = "Course Search";
-            LoadDataIntoGrid("SELECT * FROM Course");
+            LoadDataIntoGrid("SELECT CourseID, CourseName, CourseDescription, DepartmentID, Credits FROM Course");
         }
 
         private void departmentButton_Click(object sender, EventArgs e)
         {
             activeTable = "Department"; // Set active table to Department
             SSLabel.Text = "Department Search";
-            LoadDataIntoGrid("SELECT * FROM Department");
+            LoadDataIntoGrid("SELECT DepartmentID, DepartmentName, DepartmentDescription FROM Department");
         }
 
         private void panelStudentControls_Paint(object sender, PaintEventArgs e)
@@ -126,10 +126,16 @@ namespace SchoolDatabase
                     LoadDataIntoGrid("SELECT SectionID, CourseID, TeacherID, RoomNumber, Semester, SchoolYear, Capacity FROM Class");
                     break;
                 case "Course":
-                    MessageBox.Show("Will add later");
+                    courseAdd courseAdd = new courseAdd();
+                    courseAdd.ShowDialog();
+
+                    LoadDataIntoGrid("SELECT CourseID, CourseName, CourseDescription, DepartmentID, Credits FROM Course");
                     break;
                 case "Department":
-                    MessageBox.Show("Will add later");
+                    DepartmentAdd departmentAdd = new DepartmentAdd();
+                    departmentAdd.ShowDialog();
+
+                    LoadDataIntoGrid("SELECT DepartmentID, DepartmentName, DepartmentDescription FROM Department");
                     break;
             }
             MessageBox.Show("Add functionality for " + activeTable + " Query ready!");
@@ -240,11 +246,21 @@ namespace SchoolDatabase
                             break;
 
                         case "Course":
-                            query = "SELECT * FROM Course WHERE CourseName LIKE @SearchValue";
+                            query = @"SELECT CourseID, CourseName, CourseDescription, DepartmentID, Credits
+                              FROM Course
+                              WHERE CAST(CourseID AS VARCHAR) LIKE @SearchValue
+                                 OR CourseName LIKE @SearchValue
+                                 OR CourseDescription LIKE @SearchValue
+                                 OR CAST(DepartmentID AS VARCHAR) LIKE @SearchValue
+                                 OR CAST(Credits AS VARCHAR) LIKE @SearchValue";
                             break;
 
                         case "Department":
-                            query = "SELECT * FROM Department WHERE DepartmentName LIKE @SearchValue";
+                            query = @"SELECT DepartmentID, DepartmentName, DepartmentDescription
+                              FROM Department
+                              WHERE CAST(DepartmentID AS VARCHAR) LIKE @SearchValue
+                                 OR DepartmentName LIKE @SearchValue
+                                 OR DepartmentDescription LIKE @SearchValue";
                             break;
                     }
 
