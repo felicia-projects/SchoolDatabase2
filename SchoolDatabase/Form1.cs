@@ -120,12 +120,15 @@ namespace SchoolDatabase
                     LoadDataIntoGrid("SELECT TeacherID, FirstName, LastName, Email, PhoneNumber, DepartmentID FROM Teacher");
                     break;
                 case "Class":
-                    MessageBox.Show("Will add later");
+                    classAdd classAdd = new classAdd();
+                    classAdd.ShowDialog();
+
+                    LoadDataIntoGrid("SELECT SectionID, CourseID, TeacherID, RoomNumber, Semester, SchoolYear, Capacity FROM Class");
                     break;
                 case "Course":
                     MessageBox.Show("Will add later");
                     break;
-                case "Report":
+                case "Department":
                     MessageBox.Show("Will add later");
                     break;
             }
@@ -149,8 +152,8 @@ namespace SchoolDatabase
                 case "Course":
                     query = "UPDATE Course SET CourseName = @CourseName, Credits = @Credits WHERE CourseID = @CourseID";
                     break;
-                case "Report":
-                    query = "UPDATE Report SET ReportTitle = @ReportTitle, ReportDate = @ReportDate WHERE ReportID = @ReportID";
+                case "Department":
+                    query = "UPDATE Department SET DepartmentName = @DepartmentName WHERE DepartmentID = @DepartmentID";
                     break;
             }
             MessageBox.Show("Update functionality for " + activeTable);
@@ -173,8 +176,8 @@ namespace SchoolDatabase
                 case "Course":
                     query = "DELETE FROM Course WHERE CourseID = @CourseID";
                     break;
-                case "Report":
-                    query = "DELETE FROM Report WHERE ReportID = @ReportID";
+                case "Department":
+                    query = "DELETE FROM Department WHERE DepartmentID = @DepartmentID";
                     break;
             }
             MessageBox.Show("Delete functionality for " + activeTable);
@@ -225,15 +228,23 @@ namespace SchoolDatabase
                             break;
 
                         case "Class":
-                            query = "SELECT * FROM Class_Section WHERE ClassName LIKE @SearchValue";
+                            query = @"SELECT SectionID, CourseID, TeacherID, RoomNumber, Semester, SchoolYear, Capacity 
+                              FROM Class
+                              WHERE CAST(SectionID AS VARCHAR) LIKE @SearchValue
+                                 OR CAST(CourseID AS VARCHAR) LIKE @SearchValue
+                                 OR CAST(TeacherID AS VARCHAR) LIKE @SearchValue
+                                 OR CAST(RoomNumber AS VARCHAR) LIKE @SearchValue
+                                 OR Semester LIKE @SearchValue
+                                 OR CAST(SchoolYear AS VARCHAR) LIKE @SearchValue
+                                 OR CAST(Capacity AS VARCHAR) LIKE @SearchValue";
                             break;
 
                         case "Course":
                             query = "SELECT * FROM Course WHERE CourseName LIKE @SearchValue";
                             break;
 
-                        case "Report":
-                            query = "SELECT * FROM Report WHERE ReportTitle LIKE @SearchValue";
+                        case "Department":
+                            query = "SELECT * FROM Department WHERE DepartmentName LIKE @SearchValue";
                             break;
                     }
 
