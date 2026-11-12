@@ -43,6 +43,7 @@
             SSLabel = new Label();
             Addbtn = new Button();
             panelStudent = new Panel();
+            chkExactMatch = new CheckBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panelStudentControls.SuspendLayout();
@@ -134,6 +135,7 @@
             // panelStudentControls
             // 
             panelStudentControls.BackColor = SystemColors.ControlDark;
+            panelStudentControls.Controls.Add(chkExactMatch);
             panelStudentControls.Controls.Add(Deletebtn);
             panelStudentControls.Controls.Add(SSbtn);
             panelStudentControls.Controls.Add(SSTextbox);
@@ -210,6 +212,16 @@
             panelStudent.Size = new Size(347, 361);
             panelStudent.TabIndex = 1;
             // 
+            // chkExactMatch
+            // 
+            chkExactMatch.AutoSize = true;
+            chkExactMatch.Location = new Point(14, 82);
+            chkExactMatch.Name = "chkExactMatch";
+            chkExactMatch.Size = new Size(111, 24);
+            chkExactMatch.TabIndex = 6;
+            chkExactMatch.Text = "Exact Match";
+            chkExactMatch.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -252,5 +264,6 @@
         private Label SSLabel;
         private Button Addbtn;
         private Panel panelStudent;
+        private CheckBox chkExactMatch;
     }
 }

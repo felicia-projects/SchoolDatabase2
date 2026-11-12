@@ -23,6 +23,7 @@ namespace SchoolDatabase
 
         private void CSearchbtn_Click(object sender, EventArgs e)
         {
+            // Change 'Class' to 'Class_Section' here:
             string query = "INSERT INTO Class_Section (SectionID, CourseID, TeacherID, RoomNumber, Semester, SchoolYear, Capacity) " +
                            "VALUES (@SectionID, @CourseID, @TeacherID, @RoomNumber, @Semester, @SchoolYear, @Capacity)";
 

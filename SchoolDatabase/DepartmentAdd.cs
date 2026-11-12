@@ -30,7 +30,7 @@ namespace SchoolDatabase
                     cmd.Parameters.Add("@DepartmentName", SqlDbType.VarChar).Value = DNTextBox.Text.Trim();
                     cmd.Parameters.Add("@DepartmentDescription", SqlDbType.VarChar).Value = DDTextbox.Text.Trim();
 
-                    conn.Open();
+                    conn.Open(); // <-- ADD THIS LINE TO OPEN THE CONNECTION
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Department added successfully!");
                     this.Close();
