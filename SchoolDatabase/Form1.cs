@@ -201,42 +201,46 @@ namespace SchoolDatabase
                     {
                         case "Student":
                             query = @"SELECT StudentID, FirstName, LastName, DateOfBirth, Email, PhoneNumber, GradeLevel, EnrollmentDate 
-                                      FROM Student 
-                                      WHERE CAST(StudentID AS VARCHAR) LIKE @SearchValue
-                                         OR FirstName LIKE @SearchValue
-                                         OR LastName LIKE @SearchValue
-                                         OR CAST(DateOfBirth AS VARCHAR) LIKE @SearchValue
-                                         OR Email LIKE @SearchValue
-                                         OR PhoneNumber LIKE @SearchValue
-                                         OR CAST(GradeLevel AS VARCHAR) LIKE @SearchValue
-                                         OR CAST(EnrollmentDate AS VARCHAR) LIKE @SearchValue";
+                              FROM Student 
+                              WHERE CAST(StudentID AS VARCHAR) LIKE @SearchValue
+                                 OR FirstName LIKE @SearchValue
+                                 OR LastName LIKE @SearchValue
+                                 OR CAST(DateOfBirth AS VARCHAR) LIKE @SearchValue
+                                 OR Email LIKE @SearchValue
+                                 OR PhoneNumber LIKE @SearchValue
+                                 OR CAST(GradeLevel AS VARCHAR) LIKE @SearchValue
+                                 OR CAST(EnrollmentDate AS VARCHAR) LIKE @SearchValue";
                             break;
+
                         case "Teacher":
+                            
                             query = @"SELECT TeacherID, FirstName, LastName, Email, PhoneNumber, DepartmentID
-                                      FROM Teacher
-                                      WHERE CAST(TeacherID AS VARCHR) LIKE @SearchValue
-                                         OR FirstName LIKE @SeachValue
-                                         OR LastName LIKE @SearchValue
-                                         OR Email LIKE @SearchValue
-                                         OR PhoneNumber LIKE @SearchValue
-                                         OR CAST(DepartmentID AS VARCHAR) LIKE @SearchValue";
+                              FROM Teacher
+                              WHERE CAST(TeacherID AS VARCHAR) LIKE @SearchValue
+                                 OR FirstName LIKE @SearchValue
+                                 OR LastName LIKE @SearchValue
+                                 OR Email LIKE @SearchValue
+                                 OR PhoneNumber LIKE @SearchValue
+                                 OR CAST(DepartmentID AS VARCHAR) LIKE @SearchValue";
                             break;
+
                         case "Class":
                             query = "SELECT * FROM Class_Section WHERE ClassName LIKE @SearchValue";
-                            cmd.Parameters.AddWithValue("@SearchValue", "%" + searchValue + "%");
                             break;
+
                         case "Course":
                             query = "SELECT * FROM Course WHERE CourseName LIKE @SearchValue";
-                            cmd.Parameters.AddWithValue("@SearchValue", "%" + searchValue + "%");
                             break;
+
                         case "Report":
                             query = "SELECT * FROM Report WHERE ReportTitle LIKE @SearchValue";
-                            cmd.Parameters.AddWithValue("@SearchValue", "%" + searchValue + "%");
                             break;
                     }
 
+                    
                     cmd.Parameters.Add("@SearchValue", SqlDbType.VarChar).Value = "%" + searchValue + "%";
                     cmd.CommandText = query;
+
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
@@ -251,7 +255,7 @@ namespace SchoolDatabase
 
         private void SSbtn_Click_1(object sender, EventArgs e)
         {
-
+            SSbtn_Click(sender, e);
         }
     }
 }
