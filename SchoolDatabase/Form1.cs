@@ -200,12 +200,26 @@ namespace SchoolDatabase
                     switch (activeTable)
                     {
                         case "Student":
-                            query = "SELECT StudentID, FirstName, LastName, DateOfBirth, Email, PhoneNumber, GradeLevel, EnrollmentDate FROM Student WHERE FirstName LIKE @SearchValue OR LastName LIKE @SearchValue";
-                            cmd.Parameters.AddWithValue("@SearchValue", "%" + searchValue + "%");
+                            query = @"SELECT StudentID, FirstName, LastName, DateOfBirth, Email, PhoneNumber, GradeLevel, EnrollmentDate 
+                                      FROM Student 
+                                      WHERE CAST(StudentID AS VARCHAR) LIKE @SearchValue
+                                         OR FirstName LIKE @SearchValue
+                                         OR LastName LIKE @SearchValue
+                                         OR CAST(DateOfBirth AS VARCHAR) LIKE @SearchValue
+                                         OR Email LIKE @SearchValue
+                                         OR PhoneNumber LIKE @SearchValue
+                                         OR CAST(GradeLevel AS VARCHAR) LIKE @SearchValue
+                                         OR CAST(EnrollmentDate AS VARCHAR) LIKE @SearchValue";
                             break;
                         case "Teacher":
-                            query = "SELECT * FROM Teacher WHERE FirstName LIKE @SearchValue OR LastName LIKE @SearchValue";
-                            cmd.Parameters.AddWithValue("@SearchValue", "%" + searchValue + "%");
+                            query = @"SELECT TeacherID, FirstName, LastName, Email, PhoneNumber, DepartmentID
+                                      FROM Teacher
+                                      WHERE CAST(TeacherID AS VARCHR) LIKE @SearchValue
+                                         OR FirstName LIKE @SeachValue
+                                         OR LastName LIKE @SearchValue
+                                         OR Email LIKE @SearchValue
+                                         OR PhoneNumber LIKE @SearchValue
+                                         OR CAST(DepartmentID AS VARCHAR) LIKE @SearchValue";
                             break;
                         case "Class":
                             query = "SELECT * FROM Class_Section WHERE ClassName LIKE @SearchValue";
@@ -220,6 +234,8 @@ namespace SchoolDatabase
                             cmd.Parameters.AddWithValue("@SearchValue", "%" + searchValue + "%");
                             break;
                     }
+
+                    cmd.Parameters.Add("@SearchValue", SqlDbType.VarChar).Value = "%" + searchValue + "%";
                     cmd.CommandText = query;
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
@@ -231,6 +247,11 @@ namespace SchoolDatabase
                     MessageBox.Show("Error filtering data: " + ex.Message);
                 }
             }
+        }
+
+        private void SSbtn_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
