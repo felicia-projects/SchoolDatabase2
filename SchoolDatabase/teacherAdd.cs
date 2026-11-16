@@ -31,11 +31,11 @@ namespace SchoolDatabase
                 {
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@TeacherID", TIDTextbox.Text);
-                    cmd.Parameters.AddWithValue("@FirstName", TFNLabel.Text);
-                    cmd.Parameters.AddWithValue("@LastName", TLNLabel.Text);
+                    cmd.Parameters.AddWithValue("@FirstName", FNTextbox.Text);
+                    cmd.Parameters.AddWithValue("@LastName", LNTextbox.Text);
                     cmd.Parameters.AddWithValue("@Email", TEmTextbox.Text);
-                    cmd.Parameters.AddWithValue("@PhoneNumber", TPNLabel.Text);
-                    cmd.Parameters.AddWithValue("@DepartmentID", TDIDLabel.Text);
+                    cmd.Parameters.AddWithValue("@PhoneNumber", TPNTextbox.Text);
+                    cmd.Parameters.AddWithValue("@DepartmentID", DIDTextbox.Text);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Teacher added successfully!");
@@ -46,6 +46,11 @@ namespace SchoolDatabase
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+        }
+
+        private void DIDTextbox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

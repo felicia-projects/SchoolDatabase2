@@ -28,174 +28,211 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
+            CSectionIDTextbox = new TextBox();
+            CCourseIDTextbox = new TextBox();
+            CTeacherIDTextbox = new TextBox();
+            CPeriodIDTextbox = new TextBox();
+            CSectionIDLabel = new Label();
+            CCourseIDLabel = new Label();
+            CTeacherIDLabel = new Label();
+            CPeriodIDLabel = new Label();
+            CRNLabel = new Label();
+            CSLabel = new Label();
+            CSYLabel = new Label();
+            CRNTextbox = new TextBox();
+            CSTextbox = new TextBox();
+            CSYTextbox = new TextBox();
+            CCLabel = new Label();
+            CCTextbox = new TextBox();
+            CSearchbtn = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // CSectionIDTextbox
             // 
-            textBox1.Location = new Point(12, 32);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(162, 27);
-            textBox1.TabIndex = 0;
+            CSectionIDTextbox.Location = new Point(12, 32);
+            CSectionIDTextbox.Name = "CSectionIDTextbox";
+            CSectionIDTextbox.Size = new Size(162, 27);
+            CSectionIDTextbox.TabIndex = 0;
             // 
-            // textBox2
+            // CCourseIDTextbox
             // 
-            textBox2.Location = new Point(12, 92);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(162, 27);
-            textBox2.TabIndex = 1;
+            CCourseIDTextbox.Location = new Point(12, 92);
+            CCourseIDTextbox.Name = "CCourseIDTextbox";
+            CCourseIDTextbox.Size = new Size(162, 27);
+            CCourseIDTextbox.TabIndex = 1;
             // 
-            // textBox3
+            // CTeacherIDTextbox
             // 
-            textBox3.Location = new Point(12, 154);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(162, 27);
-            textBox3.TabIndex = 2;
+            CTeacherIDTextbox.Location = new Point(12, 154);
+            CTeacherIDTextbox.Name = "CTeacherIDTextbox";
+            CTeacherIDTextbox.Size = new Size(162, 27);
+            CTeacherIDTextbox.TabIndex = 2;
             // 
-            // textBox4
+            // CPeriodIDTextbox
             // 
-            textBox4.Location = new Point(12, 215);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(162, 27);
-            textBox4.TabIndex = 3;
+            CPeriodIDTextbox.Location = new Point(12, 215);
+            CPeriodIDTextbox.Name = "CPeriodIDTextbox";
+            CPeriodIDTextbox.Size = new Size(162, 27);
+            CPeriodIDTextbox.TabIndex = 3;
             // 
-            // label1
+            // CSectionIDLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 7;
-            label1.Text = "label1";
+            CSectionIDLabel.AutoSize = true;
+            CSectionIDLabel.Location = new Point(12, 9);
+            CSectionIDLabel.Name = "CSectionIDLabel";
+            CSectionIDLabel.Size = new Size(77, 20);
+            CSectionIDLabel.TabIndex = 7;
+            CSectionIDLabel.Text = "Section ID";
+            CSectionIDLabel.Click += CSectionIDLabel_Click;
             // 
-            // label2
+            // CCourseIDLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(12, 69);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 20);
-            label2.TabIndex = 8;
-            label2.Text = "label2";
+            CCourseIDLabel.AutoSize = true;
+            CCourseIDLabel.Location = new Point(12, 69);
+            CCourseIDLabel.Name = "CCourseIDLabel";
+            CCourseIDLabel.Size = new Size(73, 20);
+            CCourseIDLabel.TabIndex = 8;
+            CCourseIDLabel.Text = "Course ID";
             // 
-            // label3
+            // CTeacherIDLabel
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(12, 131);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 20);
-            label3.TabIndex = 9;
-            label3.Text = "label3";
+            CTeacherIDLabel.AutoSize = true;
+            CTeacherIDLabel.Location = new Point(12, 131);
+            CTeacherIDLabel.Name = "CTeacherIDLabel";
+            CTeacherIDLabel.Size = new Size(79, 20);
+            CTeacherIDLabel.TabIndex = 9;
+            CTeacherIDLabel.Text = "Teacher ID";
             // 
-            // label4
+            // CPeriodIDLabel
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(12, 192);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 20);
-            label4.TabIndex = 10;
-            label4.Text = "label4";
+            CPeriodIDLabel.AutoSize = true;
+            CPeriodIDLabel.Location = new Point(12, 192);
+            CPeriodIDLabel.Name = "CPeriodIDLabel";
+            CPeriodIDLabel.Size = new Size(70, 20);
+            CPeriodIDLabel.TabIndex = 10;
+            CPeriodIDLabel.Text = "Period ID";
             // 
-            // label5
+            // CRNLabel
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(222, 9);
-            label5.Name = "label5";
-            label5.Size = new Size(50, 20);
-            label5.TabIndex = 11;
-            label5.Text = "label5";
+            CRNLabel.AutoSize = true;
+            CRNLabel.Location = new Point(222, 9);
+            CRNLabel.Name = "CRNLabel";
+            CRNLabel.Size = new Size(107, 20);
+            CRNLabel.TabIndex = 11;
+            CRNLabel.Text = "Room Number";
             // 
-            // label6
+            // CSLabel
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(222, 69);
-            label6.Name = "label6";
-            label6.Size = new Size(50, 20);
-            label6.TabIndex = 12;
-            label6.Text = "label6";
+            CSLabel.AutoSize = true;
+            CSLabel.Location = new Point(222, 69);
+            CSLabel.Name = "CSLabel";
+            CSLabel.Size = new Size(70, 20);
+            CSLabel.TabIndex = 12;
+            CSLabel.Text = "Semester";
             // 
-            // label7
+            // CSYLabel
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(222, 131);
-            label7.Name = "label7";
-            label7.Size = new Size(50, 20);
-            label7.TabIndex = 13;
-            label7.Text = "label7";
+            CSYLabel.AutoSize = true;
+            CSYLabel.Location = new Point(222, 131);
+            CSYLabel.Name = "CSYLabel";
+            CSYLabel.Size = new Size(86, 20);
+            CSYLabel.TabIndex = 13;
+            CSYLabel.Text = "School Year";
             // 
-            // textBox5
+            // CRNTextbox
             // 
-            textBox5.Location = new Point(222, 32);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(162, 27);
-            textBox5.TabIndex = 14;
+            CRNTextbox.Location = new Point(222, 32);
+            CRNTextbox.Name = "CRNTextbox";
+            CRNTextbox.Size = new Size(162, 27);
+            CRNTextbox.TabIndex = 14;
             // 
-            // textBox6
+            // CSTextbox
             // 
-            textBox6.Location = new Point(222, 92);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(162, 27);
-            textBox6.TabIndex = 15;
+            CSTextbox.Location = new Point(222, 92);
+            CSTextbox.Name = "CSTextbox";
+            CSTextbox.Size = new Size(162, 27);
+            CSTextbox.TabIndex = 15;
             // 
-            // textBox7
+            // CSYTextbox
             // 
-            textBox7.Location = new Point(222, 154);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(162, 27);
-            textBox7.TabIndex = 16;
+            CSYTextbox.Location = new Point(222, 154);
+            CSYTextbox.Name = "CSYTextbox";
+            CSYTextbox.Size = new Size(162, 27);
+            CSYTextbox.TabIndex = 16;
+            // 
+            // CCLabel
+            // 
+            CCLabel.AutoSize = true;
+            CCLabel.Location = new Point(222, 192);
+            CCLabel.Name = "CCLabel";
+            CCLabel.Size = new Size(66, 20);
+            CCLabel.TabIndex = 17;
+            CCLabel.Text = "Capacity";
+            // 
+            // CCTextbox
+            // 
+            CCTextbox.Location = new Point(222, 215);
+            CCTextbox.Name = "CCTextbox";
+            CCTextbox.Size = new Size(162, 27);
+            CCTextbox.TabIndex = 18;
+            // 
+            // CSearchbtn
+            // 
+            CSearchbtn.Location = new Point(151, 248);
+            CSearchbtn.Name = "CSearchbtn";
+            CSearchbtn.Size = new Size(94, 29);
+            CSearchbtn.TabIndex = 19;
+            CSearchbtn.Text = "Save";
+            CSearchbtn.UseVisualStyleBackColor = true;
+            CSearchbtn.Click += CSearchbtn_Click;
             // 
             // classAdd
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            ClientSize = new Size(395, 287);
+            Controls.Add(CSearchbtn);
+            Controls.Add(CCTextbox);
+            Controls.Add(CCLabel);
+            Controls.Add(CSYTextbox);
+            Controls.Add(CSTextbox);
+            Controls.Add(CRNTextbox);
+            Controls.Add(CSYLabel);
+            Controls.Add(CSLabel);
+            Controls.Add(CRNLabel);
+            Controls.Add(CPeriodIDLabel);
+            Controls.Add(CTeacherIDLabel);
+            Controls.Add(CCourseIDLabel);
+            Controls.Add(CSectionIDLabel);
+            Controls.Add(CPeriodIDTextbox);
+            Controls.Add(CTeacherIDTextbox);
+            Controls.Add(CCourseIDTextbox);
+            Controls.Add(CSectionIDTextbox);
             Name = "classAdd";
             Text = "classAdd";
+            Load += classAdd_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private TextBox CSectionIDTextbox;
+        private TextBox CCourseIDTextbox;
+        private TextBox CTeacherIDTextbox;
+        private TextBox CPeriodIDTextbox;
+        private Label CSectionIDLabel;
+        private Label CCourseIDLabel;
+        private Label CTeacherIDLabel;
+        private Label CPeriodIDLabel;
+        private Label CRNLabel;
+        private Label CSLabel;
+        private Label CSYLabel;
+        private TextBox CRNTextbox;
+        private TextBox CSTextbox;
+        private TextBox CSYTextbox;
+        private Label CCLabel;
+        private TextBox CCTextbox;
+        private Button CSearchbtn;
     }
 }

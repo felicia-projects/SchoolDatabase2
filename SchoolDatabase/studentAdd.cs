@@ -18,7 +18,7 @@ namespace SchoolDatabase
 
         private void studentSavebtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Value in textbox is: " + SIDTextbox.Text); // Display the value in the textbox
+            
             String query = "INSERT INTO Student (StudentID ,FirstName, LastName, DateOfBirth, Email, PhoneNumber, GradeLevel, EnrollmentDate) VALUES (@StudentID, @FirstName, @LastName, @DateOfBirth, @Email, @PhoneNumber, @GradeLevel, @EnrollmentDate)";
 
             using (SqlConnection conn = Form1.DatabaseConnection.GetConnection())
