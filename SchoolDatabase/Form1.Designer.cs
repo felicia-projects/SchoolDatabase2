@@ -36,6 +36,7 @@
             studentButton = new Button();
             dataGridView1 = new DataGridView();
             panelStudentControls = new Panel();
+            chkExactMatch = new CheckBox();
             Deletebtn = new Button();
             SSbtn = new Button();
             SSTextbox = new TextBox();
@@ -43,7 +44,6 @@
             SSLabel = new Label();
             Addbtn = new Button();
             panelStudent = new Panel();
-            chkExactMatch = new CheckBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panelStudentControls.SuspendLayout();
@@ -147,6 +147,16 @@
             panelStudentControls.Size = new Size(339, 171);
             panelStudentControls.TabIndex = 6;
             // 
+            // chkExactMatch
+            // 
+            chkExactMatch.AutoSize = true;
+            chkExactMatch.Location = new Point(14, 82);
+            chkExactMatch.Name = "chkExactMatch";
+            chkExactMatch.Size = new Size(111, 24);
+            chkExactMatch.TabIndex = 6;
+            chkExactMatch.Text = "Exact Match";
+            chkExactMatch.UseVisualStyleBackColor = true;
+            // 
             // Deletebtn
             // 
             Deletebtn.Location = new Point(214, 120);
@@ -155,6 +165,7 @@
             Deletebtn.TabIndex = 5;
             Deletebtn.Text = "Delete";
             Deletebtn.UseVisualStyleBackColor = true;
+            Deletebtn.Click += Deletebtn_Click;
             // 
             // SSbtn
             // 
@@ -181,6 +192,7 @@
             Updatebtn.TabIndex = 4;
             Updatebtn.Text = "Update";
             Updatebtn.UseVisualStyleBackColor = true;
+            Updatebtn.Click += Updatebtn_Click;
             // 
             // SSLabel
             // 
@@ -211,16 +223,6 @@
             panelStudent.Name = "panelStudent";
             panelStudent.Size = new Size(347, 361);
             panelStudent.TabIndex = 1;
-            // 
-            // chkExactMatch
-            // 
-            chkExactMatch.AutoSize = true;
-            chkExactMatch.Location = new Point(14, 82);
-            chkExactMatch.Name = "chkExactMatch";
-            chkExactMatch.Size = new Size(111, 24);
-            chkExactMatch.TabIndex = 6;
-            chkExactMatch.Text = "Exact Match";
-            chkExactMatch.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

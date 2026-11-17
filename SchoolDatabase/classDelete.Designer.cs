@@ -1,6 +1,6 @@
 ﻿namespace SchoolDatabase
 {
-    partial class Form2
+    partial class classDelete
     {
         /// <summary>
         /// Required designer variable.
@@ -28,30 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
+            yesButton = new Button();
+            noButton = new Button();
             label1 = new Label();
             dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // yesButton
             // 
-            button1.Location = new Point(97, 271);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "YES";
-            button1.UseVisualStyleBackColor = true;
+            yesButton.Location = new Point(97, 271);
+            yesButton.Name = "yesButton";
+            yesButton.Size = new Size(94, 29);
+            yesButton.TabIndex = 0;
+            yesButton.Text = "YES";
+            yesButton.UseVisualStyleBackColor = true;
+            yesButton.Click += this.yesButton_Click;
             // 
-            // button2
+            // noButton
             // 
-            button2.Location = new Point(287, 271);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 1;
-            button2.Text = "NO";
-            button2.UseVisualStyleBackColor = true;
+            noButton.Location = new Point(287, 271);
+            noButton.Name = "noButton";
+            noButton.Size = new Size(94, 29);
+            noButton.TabIndex = 1;
+            noButton.Text = "NO";
+            noButton.UseVisualStyleBackColor = true;
+            noButton.Click += noButton_Click;
             // 
             // label1
             // 
@@ -71,17 +73,18 @@
             dataGridView1.Size = new Size(454, 192);
             dataGridView1.TabIndex = 3;
             // 
-            // Form2
+            // classDelete
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(478, 450);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Name = "Form2";
-            Text = "DeleteClass";
+            Controls.Add(noButton);
+            Controls.Add(yesButton);
+            Name = "classDelete";
+            Text = "classDelete.cs";
+            Load += classDelete_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -89,8 +92,8 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button yesButton;
+        private Button noButton;
         private Label label1;
         private DataGridView dataGridView1;
     }

@@ -141,52 +141,94 @@ namespace SchoolDatabase
 
         }
 
+
         private void Updatebtn_Click(object sender, EventArgs e)
         {
-            string query = "";
             switch (activeTable)
             {
                 case "Student":
-                    query = "UPDATE Student SET FirstName = @FirstName, LastName = @LastName, DateOfBirth = @DateOfBirth, Email = @Email, PhoneNumber = @PhoneNumber, GradeLevel = @GradeLevel, EnrollmentDate = @EnrollmentDate WHERE StudentID = @StudentID";
+                    studentUpdate updateStudentForm = new studentUpdate();
+                    updateStudentForm.ShowDialog();
+
+                    LoadDataIntoGrid("SELECT StudentID, FirstName, LastName, DateOfBirth, Email, PhoneNumber, GradeLevel, EnrollmentDate FROM Student");
                     break;
+
                 case "Teacher":
-                    query = "UPDATE Teacher SET FirstName = @FirstName, LastName = @LastName, Subject = @Subject WHERE TeacherID = @TeacherID";
+                    teacherUpdate updateTeacherForm = new teacherUpdate();
+                    updateTeacherForm.ShowDialog();
+
+                    LoadDataIntoGrid("SELECT TeacherID, FirstName, LastName, Email, PhoneNumber, DepartmentID FROM Teacher");
                     break;
+
                 case "Class_Section":
-                    query = "UPDATE Class_Section SET CourseID = @CourseID, TeacherID = @TeacherID, RoomNumber = @RoomNumber, Semester = @Semester, SchoolYear = @SchoolYear, Capacity = @Capacity WHERE SectionID = @SectionID";
+                    classUpdate updateClassForm = new classUpdate();
+                    updateClassForm.ShowDialog();
+
+                    LoadDataIntoGrid("SELECT SectionID, CourseID, TeacherID, PeriodID, RoomNumber, Semester, SchoolYear, Capacity FROM Class_Section");
                     break;
+
                 case "Course":
-                    query = "UPDATE Course SET CourseName = @CourseName, Credits = @Credits WHERE CourseID = @CourseID";
+                    courseUpdate updateCourseForm = new courseUpdate();
+                    updateCourseForm.ShowDialog();
+
+                    LoadDataIntoGrid("SELECT CourseID, CourseName, CourseDescription, DepartmentID, Credits FROM Course");
                     break;
+
                 case "Department":
-                    query = "UPDATE Department SET DepartmentName = @DepartmentName WHERE DepartmentID = @DepartmentID";
+                    departmentUpdate updateDepartmentForm = new departmentUpdate();
+                    updateDepartmentForm.ShowDialog();
+
+                    LoadDataIntoGrid(
+                        "SELECT DepartmentID, DepartmentName, DepartmentDescription FROM Department");
+                    break;
+
+                default:
+                    MessageBox.Show("Please select a table.");
                     break;
             }
-            MessageBox.Show("Update functionality for " + activeTable);
         }
+
+
 
         private void Deletebtn_Click(object sender, EventArgs e)
         {
-            string query = "";
             switch (activeTable)
             {
                 case "Student":
-                    query = "DELETE FROM Student WHERE StudentID = @StudentID";
+                    studentDelete deleteStudentForm = new studentDelete();
+                    deleteStudentForm.ShowDialog();
+
+                    LoadDataIntoGrid("SELECT StudentID, FirstName, LastName, DateOfBirth, Email, PhoneNumber, GradeLevel, EnrollmentDate FROM Student");
                     break;
+
                 case "Teacher":
-                    query = "DELETE FROM Teacher WHERE TeacherID = @TeacherID";
+                    teacherDelete deleteTeacherForm = new teacherDelete();
+                    deleteTeacherForm.ShowDialog();
+
+                    LoadDataIntoGrid("SELECT TeacherID, FirstName, LastName, Email, PhoneNumber, DepartmentID FROM Teacher");
                     break;
+
                 case "Class_Section":
-                    query = "DELETE FROM Class_Section WHERE SectionID = @SectionID";
+                    classDelete deleteClassForm = new classDelete();
+                    deleteClassForm.ShowDialog();
+
+                    LoadDataIntoGrid("SELECT SectionID, CourseID, TeacherID, PeriodID, RoomNumber, Semester, SchoolYear, Capacity FROM Class_Section");
                     break;
+
                 case "Course":
-                    query = "DELETE FROM Course WHERE CourseID = @CourseID";
+                    courseDelete deleteCourseForm = new courseDelete();
+                    deleteCourseForm.ShowDialog();
+
+                    LoadDataIntoGrid("SELECT CourseID, CourseName, CourseDescription, DepartmentID, Credits FROM Course");
                     break;
+
                 case "Department":
-                    query = "DELETE FROM Department WHERE DepartmentID = @DepartmentID";
+                    departmentDelete deleteDepartmentForm = new departmentDelete();
+                    deleteDepartmentForm.ShowDialog();
+
+                    LoadDataIntoGrid("SELECT DepartmentID, DepartmentName, DepartmentDescription FROM Department");
                     break;
             }
-            MessageBox.Show("Delete functionality for " + activeTable);
         }
 
         private void SSbtn_Click(object sender, EventArgs e)
