@@ -30,8 +30,7 @@ namespace SchoolDatabase
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
 
-                    MessageBox.Show("Departments loaded: " + dt.Rows.Count);
-
+                   
                     dataGridView1.DataSource = dt;
                     dataGridView1.ReadOnly = true;
                     dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;

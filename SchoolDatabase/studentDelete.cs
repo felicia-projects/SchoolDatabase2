@@ -15,7 +15,7 @@ namespace SchoolDatabase
 
         private void studentDelete_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Student Delete form is loading!");
+ 
             LoadStudents();
         }
 
@@ -31,7 +31,7 @@ namespace SchoolDatabase
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
 
-                    MessageBox.Show("Students loaded: " + dt.Rows.Count);
+                 
 
                     dataGridView1.DataSource = dt;
                     dataGridView1.ReadOnly = true;
@@ -43,7 +43,7 @@ namespace SchoolDatabase
                     dataGridView1.ClearSelection();
                     dataGridView1.CurrentCell = null;
 
-                    MessageBox.Show("Students loaded: " + dt.Rows.Count);
+        
                 }
                 catch (Exception ex)
                 {
