@@ -12,7 +12,8 @@ namespace SchoolDatabase
         private string activeTable = "Student"; // Default active table
         public static class DatabaseConnection
         {
-            private static string connectionString = @"Server=DESKTOP-G8BUTIS;Initial Catalog=CopySchoolDatabase;Integrated Security=True; Trust Server Certificate=True;";
+            private static string connectionString = @"Server=FELICIA;Initial Catalog=School;Integrated Security=True; Trust Server Certificate=True;";
+            //private static string connectionString = @"Server=DESKTOP-G8BUTIS;Initial Catalog=CopySchoolDatabase;Integrated Security=True; Trust Server Certificate=True;";
 
             public static SqlConnection GetConnection()
             {
