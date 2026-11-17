@@ -37,7 +37,7 @@
             // 
             // noButton
             // 
-            noButton.Location = new Point(308, 308);
+            noButton.Location = new Point(379, 334);
             noButton.Name = "noButton";
             noButton.Size = new Size(94, 29);
             noButton.TabIndex = 0;
@@ -47,18 +47,18 @@
             // 
             // yesButton
             // 
-            yesButton.Location = new Point(109, 308);
+            yesButton.Location = new Point(180, 334);
             yesButton.Name = "yesButton";
             yesButton.Size = new Size(94, 29);
             yesButton.TabIndex = 1;
             yesButton.Text = "YES";
             yesButton.UseVisualStyleBackColor = true;
-            yesButton.Click += this.yesButton_Click;
+            yesButton.Click += yesButton_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(172, 265);
+            label1.Location = new Point(243, 291);
             label1.Name = "label1";
             label1.Size = new Size(148, 20);
             label1.TabIndex = 2;
@@ -70,14 +70,14 @@
             dataGridView1.Location = new Point(12, 12);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(488, 208);
+            dataGridView1.Size = new Size(649, 229);
             dataGridView1.TabIndex = 3;
             // 
             // departmentDelete
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(512, 450);
+            ClientSize = new Size(673, 450);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Controls.Add(yesButton);
