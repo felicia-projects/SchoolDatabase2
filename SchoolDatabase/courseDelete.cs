@@ -104,6 +104,7 @@ namespace SchoolDatabase
                 }
                 catch (SqlException ex)
                 {
+                    // Check for foreign key constraint violation (error number 547)
                     if (ex.Number == 547)
                     {
                         MessageBox.Show(

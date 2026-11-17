@@ -25,7 +25,7 @@ namespace SchoolDatabase
                 try
                 {
                     string query = "SELECT DepartmentID, DepartmentName, DepartmentDescription FROM Department";
-
+                    // Create a SqlDataAdapter to fill a DataTable with the results of the query
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
@@ -56,7 +56,7 @@ namespace SchoolDatabase
                 MessageBox.Show("Please select a department to delete.");
                 return;
             }
-
+            // Get the DepartmentID of the selected department
             object? departmentID =
                 dataGridView1.CurrentRow.Cells["DepartmentID"].Value;
 
@@ -70,6 +70,7 @@ namespace SchoolDatabase
                 "Are you sure you want to delete this department?",
                 "Confirm Delete",
                 MessageBoxButtons.YesNo,
+               
                 MessageBoxIcon.Warning);
 
             if (confirm != DialogResult.Yes)
@@ -82,7 +83,7 @@ namespace SchoolDatabase
                 try
                 {
                     conn.Open();
-
+                    // Prepare the DELETE command with a parameter for DepartmentID
                     string query =
                         "DELETE FROM Department WHERE DepartmentID = @DepartmentID";
 
