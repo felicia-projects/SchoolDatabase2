@@ -13,7 +13,7 @@ namespace SchoolDatabase
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void courseDelete_Load(object sender, EventArgs e)
         {
             LoadCourses();
         }

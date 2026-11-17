@@ -1,4 +1,5 @@
-﻿namespace SchoolDatabase
+﻿
+namespace SchoolDatabase
 {
     partial class courseDelete
     {
@@ -84,7 +85,7 @@
             Controls.Add(dataGridView1);
             Name = "courseDelete";
             Text = "CourseDelete";
-            Load += Form2_Load;
+            Load += courseDelete_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
